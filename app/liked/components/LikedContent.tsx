@@ -2,7 +2,7 @@
 
 import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
-import { UseUser } from "@/hooks/useUser";
+import { useUser } from "@/hooks/useUser";
 import { Song } from "@/types";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ interface LikedContentProps {
 
 const LikedContent: React.FC<LikedContentProps> = ({ songs }) => {
   const router = useRouter();
-  const { isLoading, user } = UseUser();
+  const { isLoading, user } = useUser();
 
   useEffect(() => {
     if (!isLoading && !user) {

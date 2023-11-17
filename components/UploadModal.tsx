@@ -4,7 +4,7 @@ import uniqid from "uniqid";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { UseUser } from "@/hooks/useUser";
+import { useUser } from "@/hooks/useUser";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 
@@ -17,7 +17,7 @@ import Button from "./Button";
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const uploadModal = useUploadModal();
-  const { user } = UseUser();
+  const { user } = useUser();
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
 

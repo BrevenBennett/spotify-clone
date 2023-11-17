@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import useAuthModal from "@/hooks/useAuthModal";
-import { UseUser } from "@/hooks/useUser";
+import { useUser } from "@/hooks/useUser";
 
 interface LikeButtonProps {
   songId: string;
@@ -18,7 +18,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
   const { supabaseClient } = useSessionContext();
 
   const authModal = useAuthModal();
-  const { user } = UseUser();
+  const { user } = useUser();
 
   const [isLiked, setIsLiked] = useState(false);
 
